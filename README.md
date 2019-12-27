@@ -10,7 +10,7 @@
 
 >>> run in command line ```ng serve```
 
-for styling use only ```app.component.html``` and ```app.component.scss``` !!!
+for styling use only ```.html``` (saved id & tag) and ```.component.scss``` !!!
      
            _                      _                 ____ _     ___
           / \   _ __   __ _ _   _| | __ _ _ __     / ___| |   |_ _|
@@ -18,33 +18,32 @@ for styling use only ```app.component.html``` and ```app.component.scss``` !!!
         / ___ \| | | | (_| | |_| | | (_| | |      | |___| |___ | |
        /_/   \_\_| |_|\__, |\__,_|_|\__,_|_|       \____|_____|___|
                       |___/
-          
-      
-      Angular CLI: 7.0.7
-      Node: 10.14.2
-      OS: win32 x64
-      Angular: 7.0.4
-      ... animations, common, compiler, compiler-cli, core, forms
-      ... http, language-service, platform-browser
-      ... platform-browser-dynamic, router
-      
-      Package                           Version
-      -----------------------------------------------------------
-      @angular-devkit/architect         0.10.7
-      @angular-devkit/build-angular     0.13.0
-      @angular-devkit/build-optimizer   0.13.0
-      @angular-devkit/build-webpack     0.13.0
-      @angular-devkit/core              7.0.7
-      @angular-devkit/schematics        7.0.7
-      @angular/cdk                      7.1.1
-      @angular/cli                      7.0.7
-      @angular/material                 7.1.1
-      @ngtools/webpack                  7.3.0
-      @schematics/angular               7.0.7
-      @schematics/update                0.10.7
-      rxjs                              6.3.3
-      typescript                        3.1.6
-      webpack                           4.29.0
+                  
+        Angular CLI: 8.3.21
+        Node: 10.15.3
+        OS: darwin x64
+        Angular: 8.2.14
+        ... animations, common, compiler, compiler-cli, core, forms
+        ... language-service, platform-browser, platform-browser-dynamic
+        ... router
+        
+        Package                           Version
+        -----------------------------------------------------------
+        @angular-devkit/architect         0.803.21
+        @angular-devkit/build-angular     0.803.21
+        @angular-devkit/build-optimizer   0.803.21
+        @angular-devkit/build-webpack     0.803.21
+        @angular-devkit/core              8.3.21
+        @angular-devkit/schematics        8.3.21
+        @angular/cdk                      8.2.3
+        @angular/cli                      8.3.21
+        @angular/material                 8.2.3
+        @ngtools/webpack                  8.3.21
+        @schematics/angular               8.3.21
+        @schematics/update                0.803.21
+        rxjs                              6.5.3
+        typescript                        3.5.3
+        webpack                           4.39.2
 
 
 ## Development server

@@ -1,0 +1,230 @@
+<div *ngIf="!loaded">
+  <button
+    *ngIf="MerchURL && ShowReturnButton"
+    mat-raised-button
+    name="backToMerch"
+    color="primary"
+    title="Вернуться на сайт поставщика услуги"
+    style="margin: 15px;"
+  >
+    <sub class="material-icons">reply_all</sub>
+    <span style="padding: 3px;">Вернуться</span>
+  </button>
+  <p class="title">Для оплаты заказа укажите сведения о Вашей банковской карте</p>
+  <div class="content">
+    <div id="card">
+      <div id="cardID">
+        <span style="width: 100%; padding-left: 10px; margin-top: 5px; font-size: 10px;"
+        >Номер карты</span
+        >
+        <input
+          id="cardIdInput"
+          type="text"
+          autofocus
+          required
+          oninput="this.value = this.value.replace(/\s/g, '').replace(/\B(?=(?:\d{4})+(?!\d))/g, ' ')"
+          onCopy="return false"
+          onDrag="return false"
+          onDrop="return false"
+          value=""
+          name="ccnumber"
+          autocomplete="cc-number"
+          autocorrect="off"
+          autocapitalize="off"
+          maxlength="23"
+          placeholder="**** **** **** ****"
+          title="Только цифры"
+        />
+      </div>
+      <div id="toValid">
+        <div id="validDate">
+          <span style="width: 100%; padding-left: 5px; font-size: 10px;">Срок действия</span>
+          <input
+            id="dateMM"
+            type="text"
+            required
+            maxlength="2"
+            placeholder="MM"
+            onCopy="return false"
+            onDrag="return false"
+            onDrop="return false"
+            onPaste="return false"
+            value=""
+            name="cc-exp-month"
+            autocomplete="cc-exp-month"
+            autocorrect="off"
+            autocapitalize="off"
+            title="Месяц"
+          />
+          <input
+            id="dateYY"
+            type="text"
+            required
+            maxlength="2"
+            placeholder="YY"
+            onCopy="return false"
+            onDrag="return false"
+            onDrop="return false"
+            onPaste="return false"
+            value=""
+            name="cc-exp-year"
+            autocomplete="cc-exp-year"
+            autocorrect="off"
+            autocapitalize="off"
+            title="Год"
+          />
+        </div>
+        <div id="cardLogo">
+          <img
+            *ngIf="!visa && !master && !mir && !AmEx && !maestro"
+            id="defaultLogo"
+            src="assets/images/defaultCard.jpg"
+            alt="default"
+          />
+          <img *ngIf="visa" src="assets/images/visa.png" alt="VISA" disabled/>
+          <img *ngIf="master" src="assets/images/mc.png" alt="MASTER"/>
+          <img *ngIf="mir" src="assets/images/mir2.png" alt="MIR"/>
+          <img *ngIf="AmEx" src="assets/images/amex.png" alt="AMEX"/>
+          <img *ngIf="maestro" src="assets/images/maestro.png" alt="MAESTRO"/>
+        </div>
+      </div>
+      <div id="holder">
+        <span style="width: 100%; padding-left: 10px; margin-top: 5px; font-size: 10px;"
+        >Имя и фамилия владельца карты</span
+        >
+        <input
+          id="cardHolder"
+          type="text"
+          required
+          maxlength="21"
+          placeholder="CARD HOLDER"
+          onCopy="return false"
+          onDrag="return false"
+          onDrop="return false"
+          onPaste="return false"
+          value=""
+          name="nameoncard"
+          autocomplete="cc-name"
+          autocorrect="off"
+          autocapitalize="off"
+          title="Только латинские символы"
+        />
+      </div>
+      <div id="cvc">
+        <span style="width: 100%; padding-left: 10px; margin-top: 5px; font-size: 10px;"
+        >Код проверки</span
+        >
+        <input
+          id="inputCvc"
+          type="text"
+          name="cardkey"
+          required
+          maxlength="3"
+          placeholder="CVC"
+          onCopy="return false"
+          onDrag="return false"
+          onDrop="return false"
+          onPaste="return false"
+          value=""
+          autocomplete="cc-csc"
+          autocorrect="off"
+          autocapitalize="off"
+          title="CVC/CVV код на оборотной стороне карты (последние три цифры)"
+        />
+      </div>
+    </div>
+    <div id="order">
+      <p style="font-size: 20px; font-weight: bold; margin-top: 0;">Информация о заказе:</p>
+      <div class="desc" *ngIf="order">
+        <div id="merchandName">
+          <span>Магазин: {{ this.order.merchantName }}</span>
+        </div>
+        <div id="orderId">
+          <br/>
+          <span>Номер заказа: {{ this.order.orderId }} </span>
+        </div>
+        <div id="description">
+          <br/>
+          <span>Описание заказа: {{ this.order.description }} </span>
+        </div>
+        <br/>
+      </div>
+    </div>
+  </div>
+  <div class="payment">
+    <div class="amount">
+      <div id="sum">
+        <label for="text" style="padding-left: 10px; margin-top: 5px; font-size: 12px;"
+        >Сумма</label
+        >
+        <input
+          readonly
+          type="text"
+          name="amount"
+          maxlength="5"
+          onCopy="return false"
+          onDrag="return false"
+          onDrop="return false"
+          onPaste="return false"
+          value="1 234"
+          autocomplete="off"
+          autocorrect="off"
+          autocapitalize="off"
+          title="Сумма в рублях"
+        />
+      </div>
+      <div id="simbols">
+        <span matSuffix>&#8381;</span>
+      </div>
+      <div id="comis">
+        <label for="text" style="padding-left: 10px; margin-top: 5px; font-size: 12px;"
+        >Комиссия</label
+        >
+        <input type="text" id="text" name="commiss" readonly value="-" tabindex="10" disabled/>
+      </div>
+      <div id="comisSimbol">
+        <span matSuffix>&#8381;</span>
+      </div>
+      <div id="offer">
+        <div id="info">
+          <!--<span>Максимальная сумма без учета комиссии 80 000 рублей.</span>-->
+        </div>
+      </div>
+    </div>
+    <div class="submit">
+      <button
+        *ngIf="!onSubmit"
+        mat-raised-button
+        name="submit"
+        color="primary"
+        type="submit"
+        (click)="submit()"
+        title="Сначала заполните все поля"
+        disabled
+      >
+        Оплатить
+      </button>
+      <button
+        *ngIf="onSubmit"
+        mat-raised-button
+        name="submit"
+        color="primary"
+        type="submit"
+        title="Выполнить операцию"
+      >
+        Оплатить
+      </button>
+    </div>
+  </div>
+  <div class="info">
+    <mat-progress-bar mode="determinate" value="50"></mat-progress-bar>
+    <p>
+      * Эта информация недоступна посторонним лицам. Все данные передаются зашифрованными с
+      использованием протокола SSL.
+    </p>
+    <p>
+      Если Ваша карта подключена к услуге 3D-Secure, будет проведена процедура прохождения
+      аутентификации.
+    </p>
+  </div>
+</div>

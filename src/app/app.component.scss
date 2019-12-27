@@ -1,279 +1,69 @@
-.displayNone {
-  display: none;
-}
-
-.title {
-  text-align: center;
-  font-size: 200%;
-  font-weight: bold;
-  color: rgb(83, 83, 83);
-}
-
-.content {
+.linkContainer {
+  width: 100%;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
   justify-content: center;
-  margin-top: 50px;
-  #card {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
-    width: 360px;
-    height: 220px;
-    min-width: 300px;
-    margin: 10px 38px 0 38px;
-    border-radius: 10px;
-    box-shadow: inset 0 0 5px 0 rgba(0, 0, 0, 0.5);
-    #cardID {
-      display: inline-flex;
-      flex-wrap: wrap;
-      width: 100%;
-      height: 70px;
-      justify-content: center;
-      align-items: flex-start;
-      input {
-        width: 100%;
-      }
-      span {
-        font-size: 5px;
-      }
-    }
-    #toValid {
-      display: inline-flex;
-      justify-content: space-between;
-      width: 100%;
-      height: 70px;
-      #validDate {
-        display: inline-flex;
-        flex-wrap: wrap;
-        justify-content: flex-start;
-        align-items: flex-start;
-        padding-left: 5px;
-        input {
-          width: 50px;
-          margin: 5px;
-        }
-      }
-      #cardLogo {
-        display: inline-flex;
-        justify-content: center;
-        align-items: center;
-        padding: 10px;
-        max-width: 100px;
-        img {
-          max-height: 45px;
-        }
-        #defaultLogo {
-          filter: grayscale(100%);
-          max-height: 38px;
-          max-width: 72px;
-          opacity: 0.2;
-        }
-      }
-    }
-    #holder {
-      display: inline-flex;
-      flex-wrap: wrap;
-      width: 70%;
-      height: 70px;
-      align-items: flex-start;
-      input {
-        text-transform: uppercase;
-        width: 90%;
-        font-size: 16px;
-        padding: 8px;
-      }
-    }
-    #cvc {
-      display: inline-flex;
-      flex-wrap: wrap;
-      flex-direction: row-reverse;
-      width: 30%;
-      height: 70px;
-      align-items: flex-start;
-      input {
-        width: 80%;
-      }
-    }
-  }
-  #order {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
-    width: 360px;
-    height: 220px;
-    min-width: 300px;
-    margin: 10px 38px 0 38px;
-    .desc {
-      width: 100%;
-    }
-  }
-}
+  align-items: center;
+  border-bottom: 1px solid #00abab;
 
-.payment {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: 0 10px 10px 10px;
-  .amount {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    width: 360px;
-    height: 220px;
-    min-width: 300px;
-    margin: 10px 38px 0 38px;
-    #sum {
-      display: inline-flex;
-      justify-content: flex-start;
-      align-items: flex-start;
-      flex-wrap: wrap;
-      width: 50%;
-      input {
-        max-width: 80%;
-        color: #0c5ea3;
-        border-color: #00abab;
-        &:disabled {
-          background-color: white;
-        }
-      }
-    }
-    #simbols, #comisSimbol {
-      display: inline-flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      align-items: flex-start;
-      width: 10%;
-      height: 20%;
-    }
-    #comis {
-      display: inline-flex;
-      justify-content: flex-start;
-      align-items: flex-start;
-      flex-wrap: wrap;
-      flex-direction: column;
-      width: 30%;
-      input {
-        max-width: 60%;
-        font-size: 16px;
-        padding: 8px;
-        color: #f59d15;
-        background-color: #fff;
-        border-color: #f59d15;
-      }
-    }
-    #offer {
-      display: inline-flex;
-      justify-content: flex-start;
-      align-items: flex-start;
-      flex-direction: row;
-      flex-wrap: wrap;
-      margin: 10px;
-      width: 100%;
-      #info {
-        display: inline-flex;
-        justify-content: flex-start;
-        align-items: flex-start;
-        flex-direction: column;
-        width: 100%;
-        margin: 0 0 15px;
-      }
-    }
-  }
-  .submit {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: flex-start;
-    width: 360px;
-    height: 220px;
-    min-width: 300px;
-    margin: 10px 38px 0 38px;
-    button {
-      width: 50%;
-      height: 40px;
-      margin: 43px;
-    }
-  }
-}
-
-.info {
-  margin-bottom: 150px;
-}
-
-input {
-  padding: 5px;
-  margin: 5px 10px 10px;
-  min-width: 0;
-  max-width: 100%;
-  font-size: 20px;
-  text-align: center;
-  border: 1px solid #f53d3d;
-  color: #0c5ea3;
-  border-radius: 5px;
-  transition: 1s;
-  &:hover {
-    box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+  .href {
+    margin: 10px;
+    padding: 5px;
+    color: #e91e63;
     border: 1px solid #0c5ea3;
-  }
-  &:focus {
-    outline: none;
-    box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
-    border: 1px solid #f59d15;
-    transition: 0.5s;
+    border-radius: 10px;
   }
 }
 
-button {
-  margin-top: 20px;
-  transition-duration: 0.4s;
+.head {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-justify-content: space-around;
+  justify-content: space-around;
+  -webkit-align-content: flex-start;
+  align-content: flex-start;
+  min-height: 0;
+  height: auto;
   background-color: white;
-  color: black;
-  border-radius: 8px;
-  text-align: center;
-  text-decoration: none;
-  font-size: 16px;
-  transition: 1s;
-  &:hover {
-    background-color: #00abaa;
-    color: white;
-  }
-  &:active {
-    transition: 0.1s;
-    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+  z-index: 20;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+
+  span {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    color: #f53d3d;
   }
 }
 
-p {
-  margin: 10px;
-  text-align: center;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 120%;
+@media screen and (max-width: 900px) {
+  footer {
+    position: relative;
+    bottom: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
+    box-shadow: 0 0 50px 30px white;
+  }
 }
 
-@media screen and (max-width: 1024px) {
-  #acceptImage {
+@media (max-width: 550px) {
+  .head {
+    #payment {
+      display: none;
+    }
+  }
+}
+
+@media print {
+  .head {
     display: none;
-  }
-  .title {
-    font-size: 13px;
-  }
-  .content {
-    margin-top: 10px;
-    #card {
-      margin: 10px 5px 0 5px;
-    }
-  }
-  .payment {
-    .amount {
-      height: 100px;
-    }
-    .submit {
-      height: 100px;
-    }
   }
 }
